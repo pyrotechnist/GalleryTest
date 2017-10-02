@@ -75,7 +75,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.GalleryViewHol
         public GalleryViewHolder(View itemView) {
             super(itemView);
 
-            mImageView = (ImageView) itemView;
+            mImageView = (ImageView) itemView.findViewById(R.id.image_item);
         }
     }
 }

@@ -34,11 +34,42 @@ public class MainActivity extends Activity {
         imageList.add("R.drawable.mona_lisa");
         imageList.add("R.drawable.mona_lisa");
         imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa");
+
 
 
         final ArrayList<Integer> imageListint = new ArrayList<>();
 
 
+        imageListint.add(R.drawable.mona_lisa);
+        imageListint.add(R.drawable.mona_lisa);
+        imageListint.add(R.drawable.mona_lisa);
+        imageListint.add(R.drawable.mona_lisa);
+        imageListint.add(R.drawable.mona_lisa);
+        imageListint.add(R.drawable.mona_lisa);
+        imageListint.add(R.drawable.mona_lisa);
+        imageListint.add(R.drawable.mona_lisa);
         imageListint.add(R.drawable.mona_lisa);
         imageListint.add(R.drawable.mona_lisa);
         imageListint.add(R.drawable.mona_lisa);
