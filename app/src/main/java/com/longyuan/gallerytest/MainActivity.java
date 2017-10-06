@@ -26,36 +26,9 @@ public class MainActivity extends Activity {
 
 
         imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
-        imageList.add("R.drawable.mona_lisa");
+        imageList.add("R.drawable.mona_lisa_2");
+        imageList.add("R.drawable.mona_lisa_3");
+
 
 
 
@@ -63,22 +36,10 @@ public class MainActivity extends Activity {
 
 
         imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
-        imageListint.add(R.drawable.mona_lisa);
+        imageListint.add(R.drawable.mona_lisa_2);
+        imageListint.add(R.drawable.mona_lisa_3);
+
+
 
 
 
