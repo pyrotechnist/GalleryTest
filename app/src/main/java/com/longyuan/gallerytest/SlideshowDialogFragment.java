@@ -3,9 +3,13 @@ package com.longyuan.gallerytest;
 
 import android.app.DialogFragment;
 import android.content.Context;
+import android.content.ContextWrapper;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -23,6 +27,10 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 /**
@@ -162,6 +170,8 @@ public class SlideshowDialogFragment extends DialogFragment {
                         @Override
                         public void onResourceReady(Bitmap bitmap, GlideAnimation anim) {
                             imageViewPreview.setImageBitmap(bitmap);
+                            saveToInternalStorage(bitmap);
+                            //saveImage(bitmap);
                             // thumbView.setImageBitmap(bitmap);
                         }
                     });
@@ -187,6 +197,7 @@ public class SlideshowDialogFragment extends DialogFragment {
             container.removeView((View) object);
         }
 
+        // has problem for final imageview
         private SimpleTarget target = new SimpleTarget<Bitmap>() {
             @Override
             public void onResourceReady(Bitmap bitmap, GlideAnimation glideAnimation) {
@@ -195,5 +206,71 @@ public class SlideshowDialogFragment extends DialogFragment {
                // imageViewPreview.setImageBitmap( bitmap );
             }
         };
+
+
+        private String saveImage(Bitmap image) {
+            String savedImagePath = null;
+
+            String imageFileName = "JPEG_" + "Mona" + ".jpg";
+            File storageDir = new File(
+                    Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
+                            + "/GalleryTest");
+            boolean success = true;
+            if (!storageDir.exists()) {
+                success = storageDir.mkdirs();
+            }
+            if (success) {
+                File imageFile = new File(storageDir, imageFileName);
+                savedImagePath = imageFile.getAbsolutePath();
+                try {
+                    OutputStream fOut = new FileOutputStream(imageFile);
+                    image.compress(Bitmap.CompressFormat.JPEG, 100, fOut);
+                    fOut.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                // Add the image to the system gallery
+                galleryAddPic(savedImagePath);
+                //Toast.makeText(mContext, "IMAGE SAVED"), Toast.LENGTH_LONG).show();
+            }
+            return savedImagePath;
+        }
+
+
+
+        private String saveToInternalStorage(Bitmap bitmapImage){
+            ContextWrapper cw = new ContextWrapper(getActivity());
+            // path to /data/data/yourapp/app_data/imageDir
+            File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
+            // Create imageDir
+            File mypath=new File(directory,"profile.jpg");
+
+            FileOutputStream fos = null;
+            try {
+                fos = new FileOutputStream(mypath);
+                // Use the compress method on the BitMap object to write image to the OutputStream
+                bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return directory.getAbsolutePath();
+        }
+
+
+
+        private void galleryAddPic(String imagePath) {
+            Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+            File f = new File(imagePath);
+            Uri contentUri = Uri.fromFile(f);
+            mediaScanIntent.setData(contentUri);
+            getActivity().sendBroadcast(mediaScanIntent);
+        }
     }
 }
