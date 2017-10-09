@@ -241,14 +241,31 @@ public class SlideshowDialogFragment extends DialogFragment {
 
         private String saveToInternalStorage(Bitmap bitmapImage){
             ContextWrapper cw = new ContextWrapper(getActivity());
-            // path to /data/data/yourapp/app_data/imageDir
+
+            // solution 1 : getDir()
+            // path to /data/data/yourapp/app_imageDir
             File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
             // Create imageDir
             File mypath=new File(directory,"profile.jpg");
 
+
+            // solution 2  :  File()
+            // path to /data/data/yourapp/app_data/files
+            //File mypath = new File(cw.getFilesDir(), "profile.jpg2");
+
+
             FileOutputStream fos = null;
             try {
+
+                // solution 1 and 2
                 fos = new FileOutputStream(mypath);
+
+                // solution 3 openFileOutput()
+                // path to /data/data/yourapp/app_data/files
+                //fos =  cw.openFileOutput( "profile.jpg3", Context.MODE_PRIVATE);
+
+
+
                 // Use the compress method on the BitMap object to write image to the OutputStream
                 bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
             } catch (Exception e) {
@@ -260,7 +277,7 @@ public class SlideshowDialogFragment extends DialogFragment {
                     e.printStackTrace();
                 }
             }
-            return directory.getAbsolutePath();
+            return mypath.getAbsolutePath();
         }
 
 
